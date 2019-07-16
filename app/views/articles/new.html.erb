@@ -1,0 +1,31 @@
+<%-# Title -%>
+<h1> hello </h1>
+
+<%-# Error messages -%>
+<% if @article.errors.any? %>
+<h2>Looks like something went wrong. Please fix the errors.</h2>
+<ul>
+    <% @article.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+    <% end %>
+</ul>
+<% end %>
+
+<%-# Form for Article -%>
+<%= form_for @article do |f| %>
+    <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+    </p> 
+
+    <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+    </p>
+
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to  "Back to Articles", articles_path %>
