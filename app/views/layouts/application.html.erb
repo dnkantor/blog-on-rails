@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AlphaBlog</title>
+    <title>Blog on Rails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,8 +13,10 @@
     <%= render  "layouts/navigation" %>
     <%= render  "layouts/messages" %>
     <div class="center container" >
-    <%= yield %>
+      <%= yield %>
     </div>
-    <%= render  "layouts/footer" %>
+    <div class="center container" >
+      <%= render  "layouts/footer" %>
+    </div>
   </body>
 </html>
