@@ -1,6 +1,8 @@
 <h1> All users on Blog on Rails </h1>
 
-<% @users.each do |user| %>
+<div align="center">
+    <%= will_paginate %>
+    <% @users.each do |user| %>
     <ul class="user-listing">
         <div class="row">
             <div class="well col-md-4 col-md-offset-4" align="center">
@@ -10,4 +12,9 @@
             </div>
         </div>
     </ul>
-<% end %>
+    <% end %>
+</div>
+
+<div align="center">
+    <%= will_paginate %>
+</div>
