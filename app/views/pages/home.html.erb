@@ -1,5 +1,9 @@
 <div class="jumbotron">
   <h1>Welcome to Blog on Rails!</h1>
   <p>A basic blog application made with Ruby on Rails. What can it do?</p>
-  <p><%= link_to  "Sign up here!", signup_path, class: 'btn btn-default btn-lg btn-xlarge' %></p>
+  <% if !logged_in? %>
+    <p><%= link_to  "Sign up here!", signup_path, class: 'btn btn-default btn-lg btn-xlarge' %></p>
+  <% else %>
+    <p><%= link_to  "See all articles!", articles_path, class: 'btn btn-default btn-lg btn-xlarge' %></p>
+  <% end %>
 </div>
