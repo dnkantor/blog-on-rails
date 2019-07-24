@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     end
 
     def require_same_user
-        if current_user != @user
+        if current_user != @user and !current_user.admin?
             flash[:danger] = "You can only edit your profile."
             redirect_to root_path
         end
